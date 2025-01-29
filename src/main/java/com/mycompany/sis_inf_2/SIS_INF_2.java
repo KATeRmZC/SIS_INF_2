@@ -99,6 +99,7 @@ public class SIS_INF_2 extends javax.swing.JFrame {
         bnlMenu.setBackground(new java.awt.Color(153, 153, 153));
 
         lblUsuariotxt.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblUsuariotxt.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuariotxt.setText("USUARIO O INVITADO");
 
         lblImagenUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,6 +115,7 @@ public class SIS_INF_2 extends javax.swing.JFrame {
         });
 
         lblPaginaPrincipal.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblPaginaPrincipal.setForeground(new java.awt.Color(255, 255, 255));
         lblPaginaPrincipal.setText("PAGINA PRINCIPAL");
 
         javax.swing.GroupLayout pnlPaginaPrincipalLayout = new javax.swing.GroupLayout(pnlPaginaPrincipal);
@@ -145,6 +147,7 @@ public class SIS_INF_2 extends javax.swing.JFrame {
 
         lblCategoria.setBackground(new java.awt.Color(102, 102, 102));
         lblCategoria.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblCategoria.setForeground(new java.awt.Color(255, 255, 255));
         lblCategoria.setText("CATEGORIA");
 
         javax.swing.GroupLayout pnlCategoriaLayout = new javax.swing.GroupLayout(pnlCategoria);
@@ -175,6 +178,7 @@ public class SIS_INF_2 extends javax.swing.JFrame {
         });
 
         lblCuentaTxt.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblCuentaTxt.setForeground(new java.awt.Color(255, 255, 255));
         lblCuentaTxt.setText("CUENTA");
 
         javax.swing.GroupLayout pnlCuentaLayout = new javax.swing.GroupLayout(pnlCuenta);
@@ -250,7 +254,7 @@ public class SIS_INF_2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
+            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
