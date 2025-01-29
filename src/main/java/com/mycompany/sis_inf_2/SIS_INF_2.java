@@ -4,18 +4,25 @@
  */
 package com.mycompany.sis_inf_2;
 
+import java.awt.Color;
+import java.awt.Image;
+import java.util.Locale;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author CORE i5
  */
 public class SIS_INF_2 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SIS_INF_2
-     */
+    private ImageIcon imagen;
+    private Icon icono;
     public SIS_INF_2() {
         initComponents();
-        
+        this.setLocationRelativeTo(this);
+        this.pintarImagen(this.lblImagenUser, "src/main/java/com/imagenes/user1.jpg");
         // Agregar el panel ventana_produc1
     ventana_produc1 panel = new ventana_produc1();
     this.add(panel);
@@ -33,21 +40,249 @@ public class SIS_INF_2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlFondo = new javax.swing.JPanel();
+        pnlBarra = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        bnlMenu = new javax.swing.JPanel();
+        lblUsuariotxt = new javax.swing.JLabel();
+        lblImagenUser = new javax.swing.JLabel();
+        pnlPaginaPrincipal = new javax.swing.JPanel();
+        lblPaginaPrincipal = new javax.swing.JLabel();
+        pnlCategoria = new javax.swing.JPanel();
+        lblCategoria = new javax.swing.JLabel();
+        pnlCuenta = new javax.swing.JPanel();
+        lblCuentaTxt = new javax.swing.JLabel();
+        pnlContenido = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlFondo.setBackground(new java.awt.Color(153, 153, 153));
+        pnlFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlBarra.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setText("X");
+
+        jLabel2.setText("jLabel1");
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel3.setText("-");
+
+        javax.swing.GroupLayout pnlBarraLayout = new javax.swing.GroupLayout(pnlBarra);
+        pnlBarra.setLayout(pnlBarraLayout);
+        pnlBarraLayout.setHorizontalGroup(
+            pnlBarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBarraLayout.createSequentialGroup()
+                .addContainerGap(790, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnlBarraLayout.setVerticalGroup(
+            pnlBarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBarraLayout.createSequentialGroup()
+                .addGroup(pnlBarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        pnlFondo.add(pnlBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 30));
+
+        bnlMenu.setBackground(new java.awt.Color(153, 153, 153));
+
+        lblUsuariotxt.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblUsuariotxt.setText("USUARIO O INVITADO");
+
+        lblImagenUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        pnlPaginaPrincipal.setBackground(new java.awt.Color(102, 102, 102));
+        pnlPaginaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlPaginaPrincipalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlPaginaPrincipalMouseExited(evt);
+            }
+        });
+
+        lblPaginaPrincipal.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblPaginaPrincipal.setText("PAGINA PRINCIPAL");
+
+        javax.swing.GroupLayout pnlPaginaPrincipalLayout = new javax.swing.GroupLayout(pnlPaginaPrincipal);
+        pnlPaginaPrincipal.setLayout(pnlPaginaPrincipalLayout);
+        pnlPaginaPrincipalLayout.setHorizontalGroup(
+            pnlPaginaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPaginaPrincipalLayout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(lblPaginaPrincipal)
+                .addGap(14, 14, 14))
+        );
+        pnlPaginaPrincipalLayout.setVerticalGroup(
+            pnlPaginaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPaginaPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPaginaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnlCategoria.setBackground(new java.awt.Color(102, 102, 102));
+        pnlCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlCategoriaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlCategoriaMouseExited(evt);
+            }
+        });
+
+        lblCategoria.setBackground(new java.awt.Color(102, 102, 102));
+        lblCategoria.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblCategoria.setText("CATEGORIA");
+
+        javax.swing.GroupLayout pnlCategoriaLayout = new javax.swing.GroupLayout(pnlCategoria);
+        pnlCategoria.setLayout(pnlCategoriaLayout);
+        pnlCategoriaLayout.setHorizontalGroup(
+            pnlCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCategoriaLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlCategoriaLayout.setVerticalGroup(
+            pnlCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCategoriaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlCuenta.setBackground(new java.awt.Color(102, 102, 102));
+        pnlCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlCuentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlCuentaMouseExited(evt);
+            }
+        });
+
+        lblCuentaTxt.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblCuentaTxt.setText("CUENTA");
+
+        javax.swing.GroupLayout pnlCuentaLayout = new javax.swing.GroupLayout(pnlCuenta);
+        pnlCuenta.setLayout(pnlCuentaLayout);
+        pnlCuentaLayout.setHorizontalGroup(
+            pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCuentaLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(lblCuentaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlCuentaLayout.setVerticalGroup(
+            pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCuentaLayout.createSequentialGroup()
+                .addComponent(lblCuentaTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout bnlMenuLayout = new javax.swing.GroupLayout(bnlMenu);
+        bnlMenu.setLayout(bnlMenuLayout);
+        bnlMenuLayout.setHorizontalGroup(
+            bnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bnlMenuLayout.createSequentialGroup()
+                .addGroup(bnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bnlMenuLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(lblImagenUser, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblUsuariotxt))
+                    .addGroup(bnlMenuLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(bnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pnlPaginaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18))
+        );
+        bnlMenuLayout.setVerticalGroup(
+            bnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bnlMenuLayout.createSequentialGroup()
+                .addGroup(bnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bnlMenuLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(lblUsuariotxt))
+                    .addGroup(bnlMenuLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lblImagenUser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(pnlPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnlCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnlCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(191, Short.MAX_VALUE))
+        );
+
+        pnlFondo.add(bnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 420));
+
+        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
+        pnlContenido.setLayout(pnlContenidoLayout);
+        pnlContenidoLayout.setHorizontalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 640, Short.MAX_VALUE)
+        );
+        pnlContenidoLayout.setVerticalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 420, Short.MAX_VALUE)
+        );
+
+        pnlFondo.add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 640, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(pnlFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlPaginaPrincipalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaginaPrincipalMouseEntered
+        pnlPaginaPrincipal.setBackground(new Color(53,153,153));
+    }//GEN-LAST:event_pnlPaginaPrincipalMouseEntered
+
+    private void pnlPaginaPrincipalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaginaPrincipalMouseExited
+        pnlPaginaPrincipal.setBackground(new Color(102,102,102));
+    }//GEN-LAST:event_pnlPaginaPrincipalMouseExited
+
+    private void pnlCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCategoriaMouseEntered
+        pnlCategoria.setBackground(new Color(53,153,153));
+    }//GEN-LAST:event_pnlCategoriaMouseEntered
+
+    private void pnlCategoriaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCategoriaMouseExited
+        pnlCategoria.setBackground(new Color(102,102,102));
+    }//GEN-LAST:event_pnlCategoriaMouseExited
+
+    private void pnlCuentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCuentaMouseEntered
+        pnlCuenta.setBackground(new Color(53,153,153));
+    }//GEN-LAST:event_pnlCuentaMouseEntered
+
+    private void pnlCuentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCuentaMouseExited
+        pnlCuenta.setBackground(new Color(102,102,102));
+    }//GEN-LAST:event_pnlCuentaMouseExited
 
     /**
      * @param args the command line arguments
@@ -83,7 +318,34 @@ public class SIS_INF_2 extends javax.swing.JFrame {
             }
         });
     }
-
+    private void pintarImagen(JLabel lbl, String ruta){
+        this.imagen = new ImageIcon(ruta);
+        this.icono = new ImageIcon(
+                this.imagen.getImage().getScaledInstance(
+                        lbl.getWidth(),
+                        lbl.getHeight(),
+                        Image.SCALE_DEFAULT
+                )
+        ); 
+        lbl.setIcon(this.icono);
+        this.repaint();
+    }
+            
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bnlMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblCategoria;
+    private javax.swing.JLabel lblCuentaTxt;
+    private javax.swing.JLabel lblImagenUser;
+    private javax.swing.JLabel lblPaginaPrincipal;
+    private javax.swing.JLabel lblUsuariotxt;
+    private javax.swing.JPanel pnlBarra;
+    private javax.swing.JPanel pnlCategoria;
+    private javax.swing.JPanel pnlContenido;
+    private javax.swing.JPanel pnlCuenta;
+    private javax.swing.JPanel pnlFondo;
+    private javax.swing.JPanel pnlPaginaPrincipal;
     // End of variables declaration//GEN-END:variables
 }
