@@ -5,39 +5,17 @@
     <artifactId>SIS_INF_2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+        <exec.mainClass>com.mycompany.sis_inf_2.SIS_INF_2</exec.mainClass>
     </properties>
-
     <dependencies>
-        <!-- Tus dependencias aquí -->
         <dependency>
-            <groupId>org.netbeans.external</groupId>
-            <artifactId>AbsoluteLayout</artifactId>
-            <version>RELEASE240</version>
+            <groupId>io.supabase</groupId>
+            <artifactId>supabase-js</artifactId>
+            <version>...</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>com.mycompany.sis_inf_2.SIS_INF_2</mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
