@@ -189,7 +189,7 @@ public class ventana_produc1 extends javax.swing.JPanel {
                 .addComponent(pnlFondoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlComprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,7 +207,7 @@ public class ventana_produc1 extends javax.swing.JPanel {
                 .addGap(15, 15, 15))
         );
 
-        add(pnlFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 350));
+        add(pnlFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 340));
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlComprarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlComprarMouseEntered
