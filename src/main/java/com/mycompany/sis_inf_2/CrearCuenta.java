@@ -4,6 +4,11 @@
  */
 package com.mycompany.sis_inf_2;
 
+import static java.awt.Color.black;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author CORE i5
@@ -15,6 +20,18 @@ public class CrearCuenta extends javax.swing.JPanel {
      */
     public CrearCuenta() {
         initComponents();
+    }
+    
+    public boolean isEmail(String correo){
+        Pattern pat = null;
+        Matcher mat = null;
+        pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\.[\\w\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
+        mat = pat.matcher(correo);
+        if(mat.find()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -129,7 +146,7 @@ public class CrearCuenta extends javax.swing.JPanel {
 
         PasswordFieldContraseña.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         PasswordFieldContraseña.setForeground(new java.awt.Color(204, 204, 204));
-        PasswordFieldContraseña.setText("jPasswordField1");
+        PasswordFieldContraseña.setText("00000000");
         PasswordFieldContraseña.setBorder(null);
         PasswordFieldContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,7 +156,7 @@ public class CrearCuenta extends javax.swing.JPanel {
 
         PasswordFieldContraseñaConf.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         PasswordFieldContraseñaConf.setForeground(new java.awt.Color(204, 204, 204));
-        PasswordFieldContraseñaConf.setText("jPasswordField1");
+        PasswordFieldContraseñaConf.setText("00000000");
         PasswordFieldContraseñaConf.setBorder(null);
         PasswordFieldContraseñaConf.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -294,16 +311,31 @@ public class CrearCuenta extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMouseClicked
-
+        String nombre = TextFieldNombre.getText();
+        String password = PasswordFieldContraseña.getText();
+        String correo = TextFieldCorreo.getText();
+        
+        if ((nombre.isEmpty() || password.isEmpty()) || correo.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Complete todos los datos.");
+        }
+        if(PasswordFieldContraseñaConf.getText().equals(PasswordFieldContraseña.getText())){
+            Cuenta log = new Cuenta();
+            log.setVisible(true);
+            //inserte método para añadir datos a la BD
+            this.dispose();
+        }
        
     }//GEN-LAST:event_btnRegistrarseMouseClicked
 
     private void btnRegistrarseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMouseEntered
-       
+        btnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }//GEN-LAST:event_btnRegistrarseMouseEntered
 
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
-  
+        Cuenta log = new Cuenta();
+            log.setVisible(true);
+            
+            this.dispose();
     }//GEN-LAST:event_btnCancelarMouseClicked
 
     private void btnCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseEntered
@@ -311,7 +343,8 @@ public class CrearCuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCancelarMouseEntered
 
     private void TextFieldNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextFieldNombreMouseClicked
-      
+        TextFieldNombre.setText("");
+        TextFieldNombre.setForeground(black);      
     }//GEN-LAST:event_TextFieldNombreMouseClicked
 
     private void TextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNombreActionPerformed
@@ -319,7 +352,8 @@ public class CrearCuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_TextFieldNombreActionPerformed
 
     private void TextFieldUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextFieldUsuarioMouseClicked
-       
+        TextFieldUsuario.setText("");
+        TextFieldUsuario.setForeground(black);
     }//GEN-LAST:event_TextFieldUsuarioMouseClicked
 
     private void TextFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldUsuarioActionPerformed
@@ -327,11 +361,17 @@ public class CrearCuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_TextFieldUsuarioActionPerformed
 
     private void TextFieldCorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCorreoFocusLost
-      
+             if(isEmail(TextFieldCorreo.getText())){
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Correo Electronico incorrecto", "Validar Correo Electronico"
+                ,JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_TextFieldCorreoFocusLost
 
     private void TextFieldCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextFieldCorreoMouseClicked
-     
+            TextFieldCorreo.setText("");
+            TextFieldCorreo.setForeground(black);
     }//GEN-LAST:event_TextFieldCorreoMouseClicked
 
     private void TextFieldCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldCorreoActionPerformed
@@ -339,11 +379,13 @@ public class CrearCuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_TextFieldCorreoActionPerformed
 
     private void PasswordFieldContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordFieldContraseñaMouseClicked
-     
+        PasswordFieldContraseña.setText("");
+        PasswordFieldContraseña.setForeground(black);
     }//GEN-LAST:event_PasswordFieldContraseñaMouseClicked
 
     private void PasswordFieldContraseñaConfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordFieldContraseñaConfMouseClicked
-        
+        PasswordFieldContraseñaConf.setText("");
+        PasswordFieldContraseñaConf.setForeground(black);
     }//GEN-LAST:event_PasswordFieldContraseñaConfMouseClicked
 
     private void PasswordFieldContraseñaConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldContraseñaConfActionPerformed
@@ -370,4 +412,8 @@ public class CrearCuenta extends javax.swing.JPanel {
     private javax.swing.JLabel lblRegistrate;
     private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

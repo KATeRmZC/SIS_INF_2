@@ -4,6 +4,8 @@
  */
 package com.mycompany.sis_inf_2;
 
+import java.awt.Color;
+import static java.awt.Color.black;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -20,9 +22,9 @@ public class Cuenta extends javax.swing.JPanel {
     
     public Cuenta() {
         initComponents();
-        this.setLocationRelativeTo(this);
         this.pintarImagen(this.lblImagenPolr, "src/main/java/com/imagenes/polar.jpg");
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +60,11 @@ public class Cuenta extends javax.swing.JPanel {
         lblCorreoTxt.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblCorreoTxt.setText("Correo:");
 
+        textCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textCorreoMousePressed(evt);
+            }
+        });
         textCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textCorreoActionPerformed(evt);
@@ -92,6 +99,11 @@ public class Cuenta extends javax.swing.JPanel {
         );
 
         pnlCrearCuenta.setBackground(new java.awt.Color(102, 102, 102));
+        pnlCrearCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlCrearCuentaMouseClicked(evt);
+            }
+        });
 
         txtCrearCuenta.setFont(new java.awt.Font("Roboto", 2, 24)); // NOI18N
         txtCrearCuenta.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,11 +128,14 @@ public class Cuenta extends javax.swing.JPanel {
 
         PasswordFieldContraseña.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         PasswordFieldContraseña.setForeground(new java.awt.Color(204, 204, 204));
-        PasswordFieldContraseña.setText("jPasswordField1");
+        PasswordFieldContraseña.setText("00000000");
         PasswordFieldContraseña.setBorder(null);
         PasswordFieldContraseña.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PasswordFieldContraseñaMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PasswordFieldContraseñaMousePressed(evt);
             }
         });
 
@@ -222,9 +237,36 @@ public class Cuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_textCorreoActionPerformed
 
     private void PasswordFieldContraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordFieldContraseñaMouseClicked
-        PasswordFieldContraseña.setText("");
-        PasswordFieldContraseña.setForeground(black);
+       
     }//GEN-LAST:event_PasswordFieldContraseñaMouseClicked
+
+    private void pnlCrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCrearCuentaMouseClicked
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlCrearCuentaMouseClicked
+
+    private void textCorreoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textCorreoMousePressed
+        if(textCorreo.getText().equals("Ingrese su nombre de usuario")){
+            textCorreo.setText("");
+            textCorreo.setForeground(Color.black);
+        } 
+        if(String.valueOf(PasswordFieldContraseña.getPassword()).isEmpty()){
+            PasswordFieldContraseña.setText("********");
+            PasswordFieldContraseña.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_textCorreoMousePressed
+
+    private void PasswordFieldContraseñaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordFieldContraseñaMousePressed
+        if(String.valueOf(PasswordFieldContraseña.getPassword()).equals("********")){
+            PasswordFieldContraseña.setText("");
+            PasswordFieldContraseña.setForeground(Color.black);
+        }
+            
+        if(textCorreo.getText().isEmpty()){    
+            textCorreo.setText("Ingrese su nombre de usuario");
+            textCorreo.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_PasswordFieldContraseñaMousePressed
     private void pintarImagen(JLabel lbl, String ruta){
         this.imagen = new ImageIcon(ruta);
         this.icono = new ImageIcon(
@@ -256,7 +298,4 @@ public class Cuenta extends javax.swing.JPanel {
     private javax.swing.JLabel txtCrearCuenta;
     // End of variables declaration//GEN-END:variables
 
-    private void setLocationRelativeTo(Cuenta aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
