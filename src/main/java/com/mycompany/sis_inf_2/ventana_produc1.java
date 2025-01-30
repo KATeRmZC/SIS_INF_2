@@ -6,6 +6,7 @@
 package com.mycompany.sis_inf_2;
 
 import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,6 +17,13 @@ public class ventana_produc1 extends javax.swing.JPanel {
     /** Creates new form ventana_produc1 */
     public ventana_produc1() {
         initComponents();
+    }
+    //SARAHI
+    public void mostrarPanel(JPanel panel){
+        pnlFondo.removeAll();
+        pnlFondo.add(panel);
+        pnlFondo.revalidate();
+        pnlFondo.repaint();
     }
 
     /** This method is called from within the constructor to
