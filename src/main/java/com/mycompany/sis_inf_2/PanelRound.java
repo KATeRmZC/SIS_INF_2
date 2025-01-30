@@ -1,4 +1,4 @@
-package Clases;
+package com.mycompany.sis_inf_2;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;

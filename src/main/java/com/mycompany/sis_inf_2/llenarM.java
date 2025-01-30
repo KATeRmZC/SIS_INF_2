@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.llenarmuebles;
+package com.mycompany.sis_inf_2;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -36,7 +36,7 @@ public class llenarM extends javax.swing.JFrame {
         
         
         try {
-        ImageIcon icon = new ImageIcon("C:\\Users\\ECTOR\\Documents\\NetBeansProjects\\llenarMuebles\\src\\main\\java\\com\\mycompany\\llenarmuebles\\imagen\\Designer (2).jpeg");
+        ImageIcon icon = new ImageIcon("src\\main\\java\\com\\mycompany\\sis_inf_2\\Designer (2).jpeg");
         if (icon.getImageLoadStatus() == MediaTracker.COMPLETE) {
           Image image = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH); // Escalar imagen
           this.setIconImage(image); // Establecer imagen como icono de la ventana
@@ -82,7 +82,7 @@ public class llenarM extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ImageIcon icon = new ImageIcon("C:\\Users\\ECTOR\\Documents\\NetBeansProjects\\llenarMuebles\\src\\main\\java\\com\\mycompany\\llenarmuebles\\imagen\\Designer (1).jpeg");
+        ImageIcon icon = new ImageIcon("src\\main\\java\\com\\mycompany\\sis_inf_2\\Designer (1).jpeg");
         Image image = icon.getImage().getScaledInstance(170, 130, java.awt.Image.SCALE_SMOOTH);
         jLabel2.setIcon(new ImageIcon(image));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 170, 160));

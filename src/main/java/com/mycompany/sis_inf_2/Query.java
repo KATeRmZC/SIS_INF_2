@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.llenarmuebles;
-
+package com.mycompany.sis_inf_2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -16,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
 
 public class Query {
     private static final String URL = "jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:5432/postgres";
@@ -83,4 +83,44 @@ public class Query {
         }
         return maxID;
     }
+    public javax.swing.JTable cargarDatosEnTabla(javax.swing.JTable tabla) {
+        String sql = "SELECT id_mueble, modelo, tipo, material, precio_venta, descripcion FROM mueble";
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet resultSet = statement.executeQuery()) {
+            DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+            model.setRowCount(0); // Limpiar tabla antes de agregar datos
+            while (resultSet.next()) {
+                Object[] row = new Object[6];
+                row[0] = resultSet.getInt("id_mueble");
+                row[1] = resultSet.getString("modelo");
+                row[2] = resultSet.getString("tipo");
+                row[3] = resultSet.getString("material");
+                row[4] = resultSet.getDouble("precio_venta");
+                row[5] = resultSet.getString("descripcion");
+                model.addRow(row);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tabla;
+}
+    public void eliminarMueble(Mueble mueble) {
+    String sql = "DELETE FROM mueble WHERE id_mueble = ?";
+    try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, mueble.getID_Mueble());
+
+        int affectedRows = pstmt.executeUpdate();
+        if (affectedRows > 0) {
+            mostrarMensaje("Mueble eliminado correctamente.");
+        } else {
+            mostrarMensaje("No se encontró ningún mueble con el ID proporcionado.");
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Error al eliminar el mueble: " + e.getMessage());
+    }
+}
 }
